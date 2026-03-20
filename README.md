@@ -64,6 +64,11 @@ automatically suppresses the company slug after three strikes, sending a Discord
 be investigated.
 
 
+## Screenshots
+
+![Discord alert example](assets/Example-Screenshot.png)
+
+
 ## Note
 
 This is a personal utility built for my own job search. It isn't intended for general
