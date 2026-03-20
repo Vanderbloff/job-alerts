@@ -33,13 +33,6 @@ flowchart TB
     LAMBDA -- Polls for new jobs --> ATS["🌐 ATS APIs"]
     LAMBDA -- Dedup check + mark seen jobs --> DB
     LAMBDA -- Sends alerts --> DISCORD["💬 Discord Webhook"]
-
-    style LAMBDA fill:#FFF9C4,stroke:#BBDEFB
-    style SSM fill:#FFE0B2,stroke:#2962FF
-    style DB fill:#BBDEFB,stroke:#2962FF
-    style EB fill:#C8E6C9,stroke:#BBDEFB
-    style ATS fill:#FFCDD2
-    style DISCORD fill:#FFCDD2
 ```
 
 
