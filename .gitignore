@@ -1,0 +1,12 @@
+### Build output ###
+target/
+.mvn/
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+
+### Mac OS ###
+.DS_Store
