@@ -18,7 +18,6 @@ whether to apply.
 
 For a breakdown of how it's built, see the [Architecture](#architecture) section below.
 
----
 
 ## Architecture
 
@@ -34,16 +33,8 @@ flowchart TB
     LAMBDA -- Polls for new jobs --> ATS["🌐 ATS APIs"]
     LAMBDA -- Dedup check + mark seen jobs --> DB
     LAMBDA -- Sends alerts --> DISCORD["💬 Discord Webhook"]
-
-    style LAMBDA fill:#FFF9C4,stroke:#BBDEFB
-    style SSM fill:#FFE0B2,stroke:#2962FF
-    style DB fill:#BBDEFB,stroke:#2962FF
-    style EB fill:#C8E6C9,stroke:#BBDEFB
-    style ATS fill:#FFCDD2
-    style DISCORD fill:#FFCDD2
 ```
 
----
 
 ## Tech Stack
 
@@ -59,7 +50,6 @@ flowchart TB
 | Jackson 3.x                                         | JSON parsing            | Industry standard; used to parse all ATS API responses                              |
 | Maven Shade Plugin                                  | Build                   | Packages all dependencies into a single fat JAR for Lambda deployment               |
 
----
 
 ## How It Works
 
@@ -72,11 +62,11 @@ application page.
 If a company's API endpoint stops responding, the system tracks consecutive failures and
 automatically suppresses the company slug after three strikes, sending a Discord alert so it can
 be investigated.
----
+
 
 ## Note
 
 This is a personal utility built for my own job search. It isn't intended for general
 use — running it requires your own AWS account, SSM parameters, Discord webhook, and
 company slug list.
-```
+
