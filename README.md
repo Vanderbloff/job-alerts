@@ -53,12 +53,9 @@ flowchart TB
 
 ## How It Works
 
-Every 60 minutes, EventBridge triggers the Lambda function. On startup, Lambda reads the
-Discord webhook URL and company slug list from SSM Parameter Store. It then polls each
-configured ATS API concurrently using virtual threads, filters results down to only roles posted within the last
-24 hours, checks DynamoDB to skip anything already seen, and sends matching alerts to
-Discord. Each alert includes the job title, company, location, and a direct link to the
+Every 60 minutes, EventBridge triggers the Lambda function. On startup, Lambda reads the Discord webhook URL and company slug list from SSM Parameter Store. It then polls each configured ATS API concurrently using virtual threads, filters results down to only roles posted within the last 24 hours, checks DynamoDB to skip anything already seen, and sends matching alerts to Discord. Each alert includes the job title, company, location, and a direct link to the
 application page.
+
 If a company's API endpoint stops responding, the system tracks consecutive failures and
 automatically suppresses the company slug after three strikes, sending a Discord alert so it can
 be investigated.
@@ -71,7 +68,4 @@ be investigated.
 
 ## Note
 
-This is a personal utility built for my own job search. It isn't intended for general
-use — running it requires your own AWS account, SSM parameters, Discord webhook, and
-company slug list.
-
+This is a personal utility built for my own job search. It isn't intended for general use — running it requires your own AWS account, SSM parameters, Discord webhook, and company slug list.
